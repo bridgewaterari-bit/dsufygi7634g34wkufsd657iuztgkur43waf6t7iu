@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Top 25 Piracy Sites 2025</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #eee;
+    margin: 20px;
+  }
+  h2 {
+    margin-top: 40px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 8px;
+  }
+  .category {
+    margin-bottom: 30px;
+  }
+  .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  button.site-btn {
+    background-color: #1f1f1f;
+    border: none;
+    color: #eee;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    min-width: 180px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+  }
+  button.site-btn:hover {
+    background-color: #444;
+  }
+</style>
+</head>
+<body>
+
+<script>
+  const categories = { 
+    "manga": [ 
+      "mangadex.org", "mangapark.net", "mangasee123.com", "manganato.com", "mangakakalot.com", 
+      "mangabuddy.com", "mangahasu.se", "mangahere.cc", "mangatx.com", "mangago.me", 
+      "mangairo.com", "mangahub.io", "mangakalot.com", "mangareader.to", "mangabat.com",
+      "mangafreak.net", "mangapanda.com", "mangahere.io", "mangatown.com", "mangahasu.com",
+      "mangahere.cc", "mangainn.net", "mangairo.xyz", "mangakisa.com", "mangapill.com"
+    ],
+    "movie": [
+      "thepiratebay.org", "123movies.gs", "fmovies.to", "yesmovies.ag", "putlocker.is",
+      "solarmovie.to", "losmovies.xyz", "gomoovies.to", "moviesjoy.to", "yts.mx",
+      "1337x.to", "torrentgalaxy.to", "rargb.to", "eztv.re", "yify-torrents.com",
+      "popcornflix.com", "soaper.tv", "bmovies.com", "lookmovie.ag", "vumoo.to",
+      "primewire.li", "watchserieshd.tv", "movie4k.to", "xmovies8.tv", "putlocker9.is"
+    ],
+    "tv": [
+      "eztv.re", "thepiratebay.org", "1337x.to", "torrentgalaxy.to", "yts.mx",
+      "fmovies.to", "123movies.gs", "yesmovies.ag", "solarmovie.to", "losmovies.xyz",
+      "gomoovies.to", "moviesjoy.to", "watchserieshd.tv", "primewire.li", "vumoo.to",
+      "xmovies8.tv", "putlocker9.is", "bmovies.com", "lookmovie.ag", "soaper.tv",
+      "popcornflix.com", "putlocker.is", "watchserieshd.ru", "movie4k.to", "yify-torrents.com"
+    ],
+    "anime": [
+      "hianime.to", "gogoanime.pe", "9anime.to", "animepahe.com", "animesuge.to",
+      "animekisa.tv", "animefreak.tv", "animeheaven.eu", "animeplanet.com", "animedao.to",
+      "animeultima.to", "animekarma.com", "animefrenzy.net", "animeflv.net", "animeid.tv",
+      "animeout.xyz", "animevibe.tv", "animekayo.com", "animefillerlist.com", "animebix.tv",
+      "animekisa.com", "animeheaven.ru", "animehub.ac", "animekhor.com", "animeplyx.com"
+    ]
+  };
+
+  function createCategorySection(category, sites) {
+    const section = document.createElement('div');
+    section.className = 'category';
+
+    const heading = document.createElement('h2');
+    heading.textContent = `--- TOP 25 ${category.toUpperCase()} PIRACY SITES 2025 ---`;
+    section.appendChild(heading);
+
+    const btnContainer = document.createElement('div');
+    btnContainer.className = 'btn-container';
+
+    sites.forEach(site => {
+      const btn = document.createElement('button');
+      btn.className = 'site-btn';
+      btn.textContent = `https://${site}`;
+      btn.onclick = () => window.open(`https://${site}`, '_blank');
+      btnContainer.appendChild(btn);
+    });
+
+    section.appendChild(btnContainer);
+    return section;
+  }
+
+  window.onload = () => {
+    const body = document.body;
+    for (const [category, sites] of Object.entries(categories)) {
+      body.appendChild(createCategorySection(category, sites));
+    }
+  };
+</script>
+
+</body>
+</html>
